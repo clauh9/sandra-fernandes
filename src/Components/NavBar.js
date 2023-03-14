@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link, useMatch, useResolvedPath } from 'react-router-dom';
+import { Link, useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
 
 const NavBar = () => {
+    const navigate = useNavigate();
     return (
         <nav>
             <h1>Sandra Fernandes</h1>
@@ -14,7 +15,7 @@ const NavBar = () => {
 
             <ul className='nav-login'>
                 <li><Link to="/login">Login</Link></li>
-                <li><button className='sign-up-btn'>Sign Up</button></li>
+                <li><button className='sign-up-btn' onClick={() => navigate("./signUp")}>Sign Up</button></li>
             </ul>
 
         </nav>
