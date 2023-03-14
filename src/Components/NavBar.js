@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link, useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
+import { useAuthContext } from './AuthContext';
 
 const NavBar = () => {
     const navigate = useNavigate();
+    const { currentUser } = useAuthContext();
     return (
         <nav>
             <h1>Sandra Fernandes</h1>
@@ -13,10 +15,10 @@ const NavBar = () => {
                 <CustomLink href="/croche">Crochê</CustomLink>
             </ul>
 
-            <ul className='nav-login'>
+            {currentUser === null && <ul className='nav-login'>
                 <li><Link to="/login">Login</Link></li>
                 <li><button className='sign-up-btn' onClick={() => navigate("./signUp")}>Sign Up</button></li>
-            </ul>
+            </ul>}
 
         </nav>
     );
