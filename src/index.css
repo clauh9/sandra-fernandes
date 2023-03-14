@@ -118,7 +118,7 @@ form {
 
 /* !image grid styles */
 .img-grid {
-	margin: -1rem 2rem;
+	margin: 0 2rem;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 40px;
